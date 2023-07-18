@@ -9,12 +9,22 @@
 
     let computerNum = Math.floor(Math.random() * 101);
     let personNum = +prompt('Please choose a number between 1 to 100', 1);
-
+    
+    for (let turn = 1; turn < 10; turn++) {
     if (personNum <= 100 && personNum >= 1) {
-        alert('Good job');
+        if (personNum == computerNum) {
+        alert('Congratulations, you have guessed right!'); break;
+        } else if (personNum > computerNum) {
+        personNum = +prompt('Too high! Try Again.');
+        } else if (personNum < computerNum) {
+        personNum = +prompt('Too low! Try Again.')
+        }
+    } else if (personNum == "") {
+      break;
     } else {
-        alert('Please enter a number between 1 to 100');
+        personNum = +prompt('Please choose a valid number')
     }
+}
 
   </script>
 </body>
