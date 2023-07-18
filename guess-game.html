@@ -5,27 +5,55 @@
   <title>Page Title</title>
 </head>
 <body>
+    <body>
+        <h1>Number guessing game</h1>
+    
+        <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
+    
+        <div class="form">
+          <label for="guessField">Enter a guess: </label>
+          <input type="number" min="1" max="100" required id="guessField" class="guessField">
+          <input type="submit" value="Submit guess" class="guessSubmit">
+        </div>
+    
+        <div class="resultParas">
+          <p class="guesses"></p>
+          <p class="lastResult"></p>
+          <p class="lowOrHi"></p>
+        </div>
   <script>
 
-    let computerNum = Math.floor(Math.random() * 101);
-    let personNum = +prompt('Please choose a number between 1 to 100', 1);
-    
-    for (let turn = 1; turn < 10; turn++) {
-    if (personNum <= 100 && personNum >= 1) {
-        if (personNum == computerNum) {
-        alert('Congratulations, you have guessed right!'); break;
-        } else if (personNum > computerNum) {
-        personNum = +prompt('Too high! Try Again.');
-        } else if (personNum < computerNum) {
-        personNum = +prompt('Too low! Try Again.')
-        }
-    } else if (personNum == "") {
-      break;
-    } else {
-        personNum = +prompt('Please choose a valid number')
-    }
-}
+let randomNumber = Math.floor(Math.random() * 100) + 1;
 
+const guesses = document.querySelector(".guesses");
+const lastResult = document.querySelector(".lastResult");
+const lowOrHi = document.querySelector(".lowOrHi");
+
+const guessSubmit = document.querySelector(".guessSubmit");
+const guessField = document.querySelector(".guessField");
+
+let guessCount = 1;
+let resetButton;
+
+
+//     let computerNum = Math.floor(Math.random() * 101);
+//     let personNum = +prompt('Please choose a number between 1 to 100', 1);
+    
+//     for (let turn = 1; turn < 10; turn++) {
+//     if (personNum <= 100 && personNum >= 1) {
+//         if (personNum == computerNum) {
+//         alert('Congratulations, you have guessed right!'); break;
+//         } else if (personNum > computerNum) {
+//         personNum = +prompt('Too high! Try Again.');
+//         } else if (personNum < computerNum) {
+//         personNum = +prompt('Too low! Try Again.')
+//         }
+//     } else if (personNum == "") {
+//       break;
+//     } else {
+//         personNum = +prompt('Please choose a valid number')
+//     }
+// }
   </script>
 </body>
 </html>
