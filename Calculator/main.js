@@ -13,6 +13,6 @@ function calc() {
   } else if (op == 'mul') {
     calculate = a * b;
   }
-
+ 
   document.querySelector('#result').innerHTML = calculate;
 }
